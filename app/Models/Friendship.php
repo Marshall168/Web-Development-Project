@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Friendship extends Model
 {
     use HasFactory;
+
+public function users()
+{
+    return $this->hasMany('App\User');
+}
+
 }

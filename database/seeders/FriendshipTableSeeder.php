@@ -13,6 +13,6 @@ class FriendshipTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $a->save();
     }
 }
