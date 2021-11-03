@@ -23,6 +23,11 @@ class CreateUsersTable extends Migration
             $table->string('gender')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->bigInteger('friendship_id')->unsigned();
+
+            $table->foreign('friendship_id')->references('id')->on('friendships')->onDelete('cascade')->onUpdate('cascade');
+
+
         });
     }
 
