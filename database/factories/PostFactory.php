@@ -23,7 +23,7 @@ class PostFactory extends Factory
     {
         return [
             'user_id' => 1,
-            'subject' => $this->faker->name(),
+            'subject' => $this->faker->randomElement(['Todays_Lunch', 'Picture', 'New_Pet']),
             'body' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
         ];
     }
