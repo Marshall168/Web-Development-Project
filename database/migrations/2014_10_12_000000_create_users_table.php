@@ -23,10 +23,12 @@ class CreateUsersTable extends Migration
             $table->string('gender')->nullable();
             $table->rememberToken();
             $table->timestamps();
+
+
+            
     
         });
     }
-
     /**
      * Reverse the migrations.
      *
