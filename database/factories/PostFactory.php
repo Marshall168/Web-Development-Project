@@ -25,6 +25,7 @@ class PostFactory extends Factory
             'user_id' => 1,
             'subject' => $this->faker->randomElement(['Todays_Lunch', 'Picture', 'New_Pet']),
             'body' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+            'dateposted' => now(),
         ];
     }
 }
