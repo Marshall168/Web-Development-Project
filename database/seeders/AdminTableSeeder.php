@@ -13,7 +13,7 @@ class AdminTableSeeder extends Seeder
      */
     public function run()
     {
-        $users = User::factory()->count(10)->create();
+        $users = User::factory()->count(3)->create();
 
     }
 }
