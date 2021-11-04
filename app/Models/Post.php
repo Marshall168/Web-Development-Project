@@ -9,9 +9,11 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['subject', 'user_id'];
+
     public function user()
     {
-        return $this->hasMany('App\Models\User');
+        return $this->belongsTo('App\Models\User');
     }
 
 
