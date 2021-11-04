@@ -20,10 +20,8 @@ class DatabaseSeeder extends Seeder
            UserTableSeeder::class,
            AdminTableSeeder::class,
            PostSeeder::class,
+           CommentSeeder::class,
        ]);
-
-
-
 
     }
 }
