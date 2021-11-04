@@ -17,4 +17,9 @@ class Post extends Model
     }
 
 
+
+    public function comment()
+    {
+        return $this->hasMany('App\Models\Comment');
+    }
 }
