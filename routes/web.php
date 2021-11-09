@@ -26,5 +26,6 @@ require __DIR__.'/auth.php';
 
 
 Route::get('/posts', [PostController::class, 'index']);
+Route::get('/posts/{id}',[PostController::class, 'show']);
 require __DIR__.'/auth.php';
 
