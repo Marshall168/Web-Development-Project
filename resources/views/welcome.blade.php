@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <style>
         .body-bg {
-            background-color: #9921e8;
-            background-image: linear-gradient(315deg, #9921e8 0%, #5f72be 74%);
+            background-color: #121212;
+            background-image: linear-gradient(315deg, #111827 0%, #374151 80%);
+            
 
         }
     </style>
@@ -18,13 +19,13 @@
 <body class="body-bg min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0" style="font-family: 'Lato', sans-serif;">
     <header class="max-w-lg mx-auto">
         <a href="#">
-            <h1 class="text-4xl font-bold text-white text-center">The Network</h1>
+            <h1 class="text-4xl font-bold text-white text-center">Welcome</h1>
         </a>
     </header>
 
     <main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
         <section>
-            <h3 class="font-bold text-2xl text-center">Welcome to The Network</h3>
+            <h3 class="font-bold text-2xl text-center">The Network</h3>
             <p class="text-gray-600 pt-2 text-center"> Sign in to your account.</p>
         </section>
 
