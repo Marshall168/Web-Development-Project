@@ -42,6 +42,9 @@
                 <div class="">
                     <a href="#" class="text-right">Forgot your password?</a>
                 </div>
+                <div class="font-bold">
+                    <a href="#" class="text-right">Not got an account? Sign Up.</a>
+                </div>
             </form>
         </section>
     </main>
