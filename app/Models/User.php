@@ -40,7 +40,7 @@ class User extends Authenticatable
 
     public function Friendship()
     {
-        return $this->belongsTo('App\Friendship');
+        return $this->belongsTo('App\Models\Friendship');
     }
 
     public function post()
