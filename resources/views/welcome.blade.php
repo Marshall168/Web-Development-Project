@@ -13,11 +13,10 @@
     </style>
 
 </head>
-<body class="font-Montserrat">
+<body class="mx-auto font-Montserrat">
     <!-- Header -->
     <header>
-        <nav class="container">
-            <h1></h1>
-        </nav>
+        
+    </header>
 </body>
 </html>
