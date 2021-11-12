@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
-<body>
+<body class="bg-brand">
     <h1 class="text-4x1 text-indigo-500 font-bold py-10 text-center">
         Welcome to The Network
     </h1>   
