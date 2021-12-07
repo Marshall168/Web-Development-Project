@@ -32,3 +32,7 @@ require __DIR__.'/auth.php';
 Route::get('/login', function() {
     return view('login');
 });
+
+Route::get('/signup', function() {
+    return view('sign');
+});
