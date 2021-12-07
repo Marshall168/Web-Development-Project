@@ -46,7 +46,7 @@
         </div>
     </nav>
 
-    <main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
+    <main class=" bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
         <section>
             <h3 class="font-bold text-2xl text-center">The Network</h3>
             <p class="text-gray-600 pt-2 text-center"> Sign in to your account.</p>
@@ -73,7 +73,13 @@
     </main>
 
 
- 
+ <!-- footer -->
+    <footer class="bg-gray-100 py-8 max-w-7x mx-auto">
+        <div>
+            <a class="justify-center align-items text-gray-700 flex mx-auto">Copyright Reserved</a>
+        </div>
+       
+    </footer>
         
 </body>
 
