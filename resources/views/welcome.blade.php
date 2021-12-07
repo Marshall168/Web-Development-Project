@@ -22,7 +22,7 @@
                 <div class="flex space-x-4">
                     <!-- logo -->
                     <div>
-                        <a href="" class="flex items-center py-5 px-2 text-gray-700">
+                        <a href="/" class="flex items-center py-5 px-2 text-gray-700">
                         <svg class="h-6 w-6 mr-2 text-gray-700 font-bold" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                         </svg>
@@ -31,8 +31,8 @@
                     <!-- end logo -->
                 <!-- primary -->
                     <div class= "flex items-center space-x-1">
-                        <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">News</a>
-                        <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">Contact</a>
+                        <a href="news" class="py-5 px-3 text-gray-700 hover:text-gray-900">News</a>
+                        <a href="contact" class="py-5 px-3 text-gray-700 hover:text-gray-900">Contact</a>
 
                     </div>
                 <!-- end primary -->
