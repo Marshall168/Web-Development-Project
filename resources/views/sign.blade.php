@@ -28,8 +28,8 @@
                     <!-- end logo -->
                 <!-- primary -->
                     <div class= "flex items-center space-x-1">
-                        <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">News</a>
-                        <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">Contact</a>
+                        <a href="news" class="py-5 px-3 text-gray-700 hover:text-gray-900">News</a>
+                        <a href="contact" class="py-5 px-3 text-gray-700 hover:text-gray-900">Contact</a>
 
                     </div>
                 <!-- end primary -->
@@ -38,7 +38,7 @@
                     <!-- secondary -->
                 <div class="flex items-center space-x-1">
                     <a href="login" class="py-5 px-3 text-gray-700 hover:text-gray-900">Login</a>
-                    <a href="#" class="py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300">Signup</a>
+                    <a href="sign" class="py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300">Signup</a>
                 </div>
                     <!-- end secondary -->
 
@@ -49,7 +49,7 @@
     <main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
         <section>
             <h3 class="font-bold text-2xl text-center">The Network</h3>
-            <p class="text-gray-600 pt-2 text-center"> Sign in to your account.</p>
+            <p class="text-gray-600 pt-2 text-center"> Create an Account.</p>
         </section>
 
         <section class="mt-10">
@@ -59,14 +59,20 @@
                     <input type="text" id="email" class="bg-gray-200 rounded w-full text-gray-700 outline-none focus:outline-none border-b-4 border-t-0 border-l-0 border-r-0 border-gray-300 focus:border-b-purple-600 transition duration-500 px-3 pb-3">
                 </div>
                 <div class="mb-6 pt-3 rounded bg-gray-200">
+                    <label class="block text-gray-700 text-sm font-bold mb-2 ml-3 text-center" for="email">Confirm Email</label>
+                    <input type="text" id="email" class="bg-gray-200 rounded w-full text-gray-700 outline-none focus:outline-none border-b-4 border-t-0 border-l-0 border-r-0 border-gray-300 focus:border-b-purple-600 transition duration-500 px-3 pb-3">
+                </div>
+                <div class="mb-6 pt-3 rounded bg-gray-200">
                     <label class="block text-gray-700 text-sm font-bold mb-2 ml-3 text-center" for="password">Password</label>
                     <input type="password" id="password" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-t-0 border-l-0 border-r-0 border-gray-300 focus:border-b-purple-600 transition duration-500 px-3 pb-3">
                 </div>
-                <div class="">
-                    <a href="#" class="text-right">Forgot your password?</a>
+                <div class="mb-6 pt-3 rounded bg-gray-200">
+                    <label class="block text-gray-700 text-sm font-bold mb-2 ml-3 text-center" for="password">Confirm Password</label>
+                    <input type="password" id="password" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-t-0 border-l-0 border-r-0 border-gray-300 focus:border-b-purple-600 transition duration-500 px-3 pb-3">
                 </div>
+        
                 <div class="font-bold">
-                    <a href="#" class="text-right">Not got an account? Sign Up.</a>
+                    <a href="login" class="text-right">Got an account? Login.</a>
                 </div>
             </form>
         </section>
