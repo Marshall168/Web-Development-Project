@@ -28,8 +28,8 @@
                     <!-- end logo -->
                 <!-- primary -->
                     <div class= "flex items-center space-x-1">
-                        <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">News</a>
-                        <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">Contact</a>
+                        <a href="news" class="py-5 px-3 text-gray-700 hover:text-gray-900">News</a>
+                        <a href="contact" class="py-5 px-3 text-gray-700 hover:text-gray-900">Contact</a>
 
                     </div>
                 <!-- end primary -->
