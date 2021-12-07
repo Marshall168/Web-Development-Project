@@ -48,7 +48,29 @@
             </div>  
         </div>
     </nav>
+    <!-- hero -->
+    <section class="hero mb-auto h-screen">
+        <div class="container flex flex-col-reverse lg:flex-row items-center gap-12 mt-14 lg:mt-28">
+            <!--content-->
+            <div class="flex flex-1 flex-col items-center lg:items-start">
+                <h2 class="text-3xl md:text-4 lg:text-5xl justify-center text-center text-gray-700 lg:text-left mb-6">
+                    News
+                </h2>
+                <div class ="flex justify-center flex-wrap gap-6">
+                    <button type="button" class=""></button>
+            
+            </div>
+            
+         </div>
+    </section>
+    <!-- end hero -->
  
-        
+    <!-- footer -->
+    <footer class="bg-gray-100 py-8 max-w-7x mx-auto">
+        <div>
+            <a class="justify-center align-items text-gray-700 flex mx-auto">Copyright Reserved</a>
+        </div>
+       
+    </footer>
 </body>
 </html>
