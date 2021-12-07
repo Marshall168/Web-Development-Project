@@ -33,6 +33,15 @@ Route::get('/login', function() {
     return view('login');
 });
 
-Route::get('/signup', function() {
+Route::get('/sign', function() {
     return view('sign');
 });
+
+Route::get('/contact', function() {
+    return view('contact');
+});
+
+Route::get('/news', function() {
+    return view('news');
+});
+
