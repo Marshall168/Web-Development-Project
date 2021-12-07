@@ -29,3 +29,6 @@ Route::get('/posts', [PostController::class, 'index']);
 Route::get('/posts/{id}',[PostController::class, 'show']);
 require __DIR__.'/auth.php';
 
+Route::get('/login', function() {
+    return view('login');
+});
