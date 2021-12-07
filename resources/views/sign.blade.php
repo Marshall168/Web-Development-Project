@@ -79,7 +79,13 @@
     </main>
 
 
- 
+    <!-- footer -->
+    <footer class="bg-gray-100 py-8 max-w-7x mx-auto">
+        <div>
+            <a class="justify-center align-items text-gray-700 flex mx-auto">Copyright Reserved</a>
+        </div>
+       
+    </footer>
         
 </body>
 
