@@ -48,7 +48,30 @@
             </div>  
         </div>
     </nav>
- 
-        
+
+    <!--end navbar-->
+    <!--hero-->
+    <section class="hero mb-auto h-screen p-15">
+        <div class="container flex items-center gap-12 mt-14 lg:mt-28">
+            <!--content-->
+            <div class="flex items-center lg:items-start justify-center">
+                <h2 class="text-3xl md:text-4 lg:text-5xl text-gray-700 mb-6 pl-15">
+                    Welcome to The Network
+                </h2>
+                <div class ="flex justify-center flex-wrap gap-6">
+                    <button type="button" class=""></button>
+            
+            </div>
+            
+         </div>
+    </section>
+    <!--end hero-->
+    <!-- footer -->
+    <footer class="bg-gray-100 py-8 max-w-7x mx-auto">
+        <div>
+            <a class="justify-center align-items text-gray-700 flex mx-auto">Copyright Reserved</a>
+        </div>
+       
+    </footer>
 </body>
 </html>
