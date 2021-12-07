@@ -37,6 +37,7 @@
                 </div>
                     <!-- secondary -->
                 <div class="flex items-center space-x-1">
+                    <a href="login" class="py-5 px-3 text-gray-700 hover:text-gray-900">Login</a>
                     <a href="sign" class="py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300">Sign Out</a>
                 </div>
                     <!-- end secondary -->
