@@ -42,9 +42,6 @@ Route::get('/login', function() {
     return view('login');
 });
 
-Route::get('/sign', function() {
-    return view('sign');
-});
 
 Route::get('/contact', function() {
     return view('contact');
