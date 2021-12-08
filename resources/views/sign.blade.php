@@ -53,7 +53,10 @@
         </section>
 
         <section class="mt-10">
-            <form class="flex flex-col " method="POST" action="#">
+
+            <form action="" method="post" class="flex flex-col">
+            
+                
                 <div class="mb-6 pt-3 rounded bg-gray-200">
                     <label class="block text-gray-700 text-sm font-bold mb-2 ml-3 text-center" for="email">Full Name</label>
                     <input type="text" id="email" class="bg-gray-200 rounded w-full text-gray-700 outline-none focus:outline-none border-b-4 border-t-0 border-l-0 border-r-0 border-gray-300 focus:border-b-purple-600 transition duration-500 px-3 pb-3">
@@ -66,7 +69,7 @@
                     <label class="block text-gray-700 text-sm font-bold mb-2 ml-3 text-center" for="password">Password</label>
                     <input type="password" id="password" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-t-0 border-l-0 border-r-0 border-gray-300 focus:border-b-purple-600 transition duration-500 px-3 pb-3">
                 </div>
-                <a href="homepage" class="py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300 text-center">Sign Up</a>
+                <button class="py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300 text-center" type="submit">Sign Up</button>
         
                 <div class="font-bold">
                     <a href="login" class="text-right">Got an account? Login.</a>
