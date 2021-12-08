@@ -10,6 +10,19 @@ module.exports = {
 
     theme: {
         extend: {
+            colors: {
+                primary: "#767B91",
+                secondary: "#2A324B",
+                highlight: "#F7C59F",
+                lite: "#C7CCDB",
+            },
+            
+        },
+
+    
+
+        fontFamily: {
+            display: ["Nunito", "sans-serif"],
         },
 
 
