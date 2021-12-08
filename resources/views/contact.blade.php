@@ -40,7 +40,7 @@
                     <!-- secondary -->
                 <div class="flex items-center space-x-1">
                     <a href="login" class="py-5 px-3 text-gray-700 hover:text-gray-900">Login</a>
-                    <a href="register" class="py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300">Signup</a>
+                    <a href="register" class="py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300">Sign Up</a>
                 </div>
                     <!-- end secondary -->
 
@@ -64,12 +64,6 @@
     </section>
     <!-- end hero -->
  
-     <!-- footer -->
-    <footer class="bg-gray-100 py-8 max-w-7x mx-auto">
-        <div>
-            <a class="justify-center align-items text-gray-700 flex mx-auto">Copyright Reserved</a>
-        </div>
-       
-    </footer>   
+ 
 </body>
 </html>
