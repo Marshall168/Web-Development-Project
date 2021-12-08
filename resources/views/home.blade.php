@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Network - Home</title>
+    <title>The Network</title>
 
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-</head>
+    <style>
+        .body-bg {
+            
+        }
+    </style>
 
+</head>
 <body>
-@extends('layouts.app')
-    <!-- Navbar -->
+        <!-- Navbar -->
     <nav class="bg-gray-100">
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-between">
@@ -28,48 +32,38 @@
                 <!-- primary -->
                     <div class= "flex items-center space-x-1">
                     
-                        <a href="contact" class="py-5 px-3 text-gray-700 hover:text-gray-900">Settings</a>
-                        <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">Profile</a>
-                        <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">Notifications</a>
+                        <a href="contact" class="py-5 px-3 text-gray-700 hover:text-gray-900">Contact</a>
 
                     </div>
                 <!-- end primary -->
 
                 </div>
                     <!-- secondary -->
-                <div class="col-md-8 pt-2">
-                    <button type="submit" class="btn btn-primary py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300">
-                        {{ __('Sign Out') }}
-                    </button>
+                <div class="flex items-center space-x-1">
+                    <a href="login" class="py-5 px-3 text-gray-700 hover:text-gray-900">Login</a>
+                    <a href="register" class="py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300">Sign Up</a>
                 </div>
                     <!-- end secondary -->
 
             </div>  
         </div>
     </nav>
-
-@section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Dashboard') }}</div>
-
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-
-                        {{ __('You are logged in!') }}
-                    </div>
-                </div>
+    <!-- hero -->
+    <section class="hero mb-auto h-screen">
+        <div class="container flex flex-col-reverse lg:flex-row items-center gap-12 mt-14 lg:mt-28">
+            <!--content-->
+            <div class="flex flex-1 flex-col items-center lg:items-start">
+                <h2 class="text-3xl md:text-4 lg:text-5xl justify-center text-center text-gray-700 lg:text-left mb-6">
+                    Landing
+                </h2>
+                <div class ="flex justify-center flex-wrap gap-6">
+                    <button type="button" class=""></button>
+            
             </div>
-        </div>
-    </div>
-@endsection
+            
+         </div>
+    </section>
+    <!-- end hero -->
+ 
 </body>
 </html>
-
-
