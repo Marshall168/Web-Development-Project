@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -81,14 +82,20 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($post_id)
     {
-        //
+        $post = Post::where('id', $post_id)->first();
+        if (Auth::user() != $post->user){
+            return redirect()->back();
+        }
+        $post->delete();
+        return redirect('dashboard')->with(['message' => 'Post Deleted']);
     }
 
-    public function page()
+    public function getDashboard()
     {
-        return view('dashboard');
+        $posts = Post::orderBy('created_at','desc')->get();
+        return view('dashboard', ['posts' => $posts]);
     }
 
     public function postCreatePost(Request $request)
@@ -106,5 +113,6 @@ class PostController extends Controller
         return redirect('dashboard')->with(['message' => $message]);
     }
 
+    
 
 }
