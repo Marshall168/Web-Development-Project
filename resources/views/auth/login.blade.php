@@ -13,7 +13,7 @@
 @extends('layouts.app')
  <!-- Navbar -->
  <nav class="bg-gray-100">
-        <div class="max-w-7xl mx-auto">
+        <div class="max-w-7xl mx-auto bg-network">
             <div class="flex justify-between">
                 <div class="flex space-x-4">
                     <!-- logo -->
@@ -47,7 +47,7 @@
 
 
 @section('content')
-    <main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
+    <main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl container">
         <section>
             <h3 class="font-bold text-2xl text-center">The Network</h3>
             <p class="text-gray-600 pt-2 text-center"> Sign in to your account.</p>
