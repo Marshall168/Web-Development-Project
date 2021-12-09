@@ -11,6 +11,7 @@
 
 <body class="">
 @extends('layouts.app')
+
  <!-- Navbar -->
  <nav class="bg-gray-100">
         <div class="max-w-7xl mx-auto bg-network">
