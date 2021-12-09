@@ -65,7 +65,7 @@
 
 
                     </div>
-                    <h1>Welcome back to The Network<h1>
+
                 </div>
             </div>
         </div>
