@@ -15,10 +15,10 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('subject', 50);
+            $table->string('subject', 50)->nullable();
             $table->string('body', 250);
             $table->timestamps();
-            $table->timestamp('dateposted');
+            $table->timestamp('dateposted')->nullable();
 
             $table->bigInteger('user_id')->unsigned();
 
