@@ -5,6 +5,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\UserController;
+use Ape\Models\User;
 
 
 Route::get('/', function () {
@@ -53,4 +54,6 @@ Route::get('/dashboard', [UserController::class, 'index']);
 
 Route::get('/profile', [UserController::class, 'index']);
 Route::get('/profile/{id}', [UserController::class, 'show']);
+
+Route::post('/createpost', [PostController::class, 'postCreatePost'])->name('post.create');
 
