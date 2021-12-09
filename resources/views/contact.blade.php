@@ -14,7 +14,7 @@
     </style>
 
 </head>
-<body>
+<body class="antialiased bg-gray-100">
         <!-- Navbar -->
     <nav class="bg-gray-100">
         <div class="max-w-7xl mx-auto">
@@ -48,22 +48,83 @@
         </div>
     </nav>
     <!-- hero -->
-    <section class="hero mb-auto h-screen">
-        <div class="container flex flex-col-reverse lg:flex-row items-center gap-12 mt-14 lg:mt-28">
-            <!--content-->
-            <div class="flex flex-1 flex-col items-center lg:items-start">
-                <h2 class="text-3xl md:text-4 lg:text-5xl justify-center text-center text-gray-700 lg:text-left mb-6">
-                    Need Help?
-                </h2>
-                <div class ="flex justify-center flex-wrap gap-6">
-                    <button type="button" class=""></button>
-            
+    <div class="flex w-full min-h-screen justify-center items-center">
+        <div class="flex flex-col space-y-6 bg-blue-600 w-full max-w-4xl p-8 rounded-xl shadow-lg text-white">
+        <div class="flex flex-col space-y-8 justify-between">
+            <div class="font-bold text-4xl tracking-wide text-center">
+                <h1>Contact Us</h1>
+                <p class="pt-5 text-white text-sm"> Having trouble? Don't be afraid to get in touch!</p>
             </div>
-            
-         </div>
-    </section>
+            <div class="inline-flex space-x-2 items-center">
+                <ion-icon class="text-white text-xl" name="call"></ion-icon>
+                <span>07XXX XXXXXX</span>
+            </div>
+            <div class="inline-flex space-x-2 items-center">
+                <ion-icon class="text-white text-xl" name="location"></ion-icon>
+                <span>43, Highwood Avenue, Swansea, SAX 4XX</span>
+            </div>
+            <div class="inline-flex space-x-2 items-center">
+                <ion-icon class="text-white text-xl" name="mail-open"></ion-icon>
+                <span>contact@thenetwork.co.uk</span>
+            </div>
+        </div>
+        <div class="space-x-7">
+            <a href="#">
+                <ion-icon class="" name="logo-facebook">
+            </a>
+            <a href="#">
+                <ion-icon class="" name="logo-twitter">
+            </a>
+            <a href="#">
+                <ion-icon class="" name="logo-linkedin">
+            </a>
+        </div>
+        <div>
+            <div class="bg-white rounded-xl shadow-lg p-8 text-gray-600">
+                <form action="" class="flex flex-col space-y-4">
+                    <div class="">
+                        <label 
+                        for="" 
+                        class="text-sm">Your Name</label>
+
+                        <input 
+                        type="text" 
+                        placeholder="Your Name" 
+                        class="ring-1 ring-gray-200 w-full rounded-md mt-2 px-4 py-2 outline-none focu:ring-2 focus:ring-blue-600"/>
+                    </div>
+                    <div>
+                    <label 
+                        for="" 
+                        class="text-sm">Email</label>
+                        <input 
+                        type="email" 
+                        placeholder="Email" 
+                        class="ring-1 ring-gray-200 w-full rounded-md mt-2 px-4 py-2 outline-none focu:ring-2 focus:ring-blue-600"/>
+                    </div>
+                    <div>
+                    <label 
+                        for="" 
+                        class="text-sm">Message</label>
+                        <textarea 
+                        placeholder="Type your message here..."
+                        rows="5" 
+                        class="ring-1 ring-gray-200 w-full rounded-md mt-2 px-4 py-2 outline-none focu:ring-2 focus:ring-blue-600"></textarea>
+                    </div>
+                    <button class=" text-white bg-blue-600 rounded-lg px-6 py-2 uppercase text-sm inline-block self-end">Submit</button>
+        
+
+                </form>
+
+            </div>
+        </div>
+
+        </div>
+
+        
+    </div>
     <!-- end hero -->
  
- 
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
