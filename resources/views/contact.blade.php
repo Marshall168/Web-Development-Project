@@ -69,13 +69,13 @@
             </div>
         </div>
         <div class="space-x-7">
-            <a href="#">
+            <a href="https://www.facebook.com">
                 <ion-icon class="" name="logo-facebook">
             </a>
-            <a href="#">
+            <a href="https://www.twitter.com">
                 <ion-icon class="" name="logo-twitter">
             </a>
-            <a href="#">
+            <a href="https://www.linkedin.com">
                 <ion-icon class="" name="logo-linkedin">
             </a>
         </div>
