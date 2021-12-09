@@ -49,6 +49,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
 
-
+Route::get('/dashboard', [PostController::class, 'page']);
 
 
