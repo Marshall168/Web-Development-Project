@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\User;
 
 class PostController extends Controller
 {
@@ -88,6 +89,21 @@ class PostController extends Controller
     public function page()
     {
         return view('dashboard');
+    }
+
+    public function postCreatePost(Request $request)
+    {
+        $this->validate($request,[
+            'body' => 'required|max:250'
+        ]);
+        $post = new Post();
+        $post->body = $request['body'];
+        $message = 'There was an error';
+        if ($request->user()->post()->save($post)){
+            $message = 'Post successful!';
+
+        }
+        return redirect('dashboard')->with(['message' => $message]);
     }
 
 
