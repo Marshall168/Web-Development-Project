@@ -68,7 +68,7 @@
                 <span>contact@thenetwork.co.uk</span>
             </div>
         </div>
-        <div class="space-x-7">
+        <div class="space-x-7 text-2xl">
             <a href="https://www.facebook.com">
                 <ion-icon class="" name="logo-facebook">
             </a>
