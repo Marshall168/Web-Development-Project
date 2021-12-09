@@ -14,7 +14,7 @@ Route::get('/', function () {
 
 //dashboard route
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('users.dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
@@ -49,6 +49,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
 
-Route::get('/dashboard', [PostController::class, 'page']);
+Route::get('/dashboard', [UserController::class, 'index']);
 
+Route::get('/profile', [UserController::class, 'index']);
+Route::get('/profile/{id}', [UserController::class, 'show']);
 
