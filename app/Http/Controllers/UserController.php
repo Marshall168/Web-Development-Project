@@ -19,8 +19,15 @@ class UserController extends Controller
 
     }
 
-    public function show(User $user)
+    public function show($id)
     {
-        return $user;
+        $animal = User::findOrFail($id);
+        return view('profile', ['user' => $user]);
+    }
+    
+    public function index()
+    {
+        $users = User::all();
+        return view('dashboard', ['users' => $users]);
     }
 }
