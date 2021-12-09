@@ -86,34 +86,26 @@
     <section class="row posts px-16 py-10 ">
         <div class="cold-md-6 col-md-offset-3">
             <header><h3 class="text-2xl uppercase text-blue-600">How are your friends doing?</h3></header>
-            <article class="post py-5 rounded-2xl border-blue-600 border-l-2 space-y-2">
-                <p class="pl-5 "> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                    <div class="italic text-gray-500 pl-5">
-                        Posted by Scott on 5th December 2021
-                    </div>
-                    <div class="pl-5">
-                        <a href="#">Like</a> -
-                        <a href="#">Edit</a> -
-                        <a href="#">Delete</a> -
-                        <a href="#">Comment</a>
-                    </div>
-            </article>
-            <article class="post py-10 rounded-2xl border-blue-600 border-l-2 space-y-2 ">
-                <p class="pl-5"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                    <div class="italic text-gray-500 pl-5 ">
-                        Posted by Scott on 5th December 2021
-                    </div>
-                    <div class="interaction pl-5">
-                        <a href="#">Like</a> -
-                        <a href="#">Edit</a> -
-                        <a href="#">Delete</a> -
-                        <a href="#">Comment</a>
-                    </div>
-            </article>
+            @foreach($posts as $post)
+                <article class="post py-5 rounded-2xl border-blue-600 border-l-2 space-y-2">
+                    <p class="pl-5 "> {{ $post->body }} </p>
+                        <div class="italic text-gray-500 pl-5">
+                            Posted by {{ $post->user->name}} on {{ $post->created_at }}
+                        </div>
+                        <div class="pl-5">
+                            <a href="#">Like</a> -
+                            
+                            @if(Auth::user()== $post->user)
+                                <a href="#">Edit</a> -
+                                <a href="{{ route('post.delete', ['post_id' => $post->id]) }}">Delete</a> 
+                            @endif
+                            
+                           - <a href="#">Comment</a>
+                        </div>
+                </article>
+            @endforeach
+            
+           
 
         </div>
 
