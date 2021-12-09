@@ -16,6 +16,10 @@ module.exports = {
                 highlight: "#F7C59F",
                 lite: "#C7CCDB",
             },
+        
+            backgroundImage: {
+                'network': "url('/imgs/network.jpg')",
+            }
             
         },
 
