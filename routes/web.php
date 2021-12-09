@@ -50,10 +50,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
 
-Route::get('/dashboard', [UserController::class, 'index']);
+Route::get('/dashboard', [PostController::class, 'getDashboard']);
 
 Route::get('/profile', [UserController::class, 'index']);
 Route::get('/profile/{id}', [UserController::class, 'show']);
 
-Route::post('/createpost', [PostController::class, 'postCreatePost'])->name('post.create');
+Route::post('/createpost', [PostController::class, 'postCreatePost'])->name('post.create')->middleware(['auth']);
+
+Route::get('/delete-post/{post_id}', [PostController::class, 'destroy'])->name('post.delete')->middleware(['auth']);
 
