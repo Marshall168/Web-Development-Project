@@ -84,4 +84,11 @@ class PostController extends Controller
     {
         //
     }
+
+    public function page()
+    {
+        return view('dashboard');
+    }
+
+
 }
