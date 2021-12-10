@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CommentsRequest;
+use App\Models\Comment;
+use App\Models\Post;
 
 class CommentController extends Controller
 {
@@ -32,9 +35,15 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Post $post)
     {
-        //
+        $data = $request->validated();
+        $comment = new Comment();
+        $comment->post_id = $post->id;
+   
+        $comment->save();
+
+        return $comment;
     }
 
     /**
@@ -80,5 +89,15 @@ class CommentController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function page()
+    {
+        return view('posts.comments');
+    }
+
+    public function apiIndex()
+    {
+        $comments = Comment::all();
+        return $comments;
     }
 }
