@@ -98,10 +98,13 @@
                             @if(Auth::user()== $post->user)
                                 <a href="#">Edit</a> -
                                 <a href="{{ route('post.delete', ['post_id' => $post->id]) }}">Delete</a> 
-                            @endif
-                            
-                           - <a href="#">Comment</a>
+                            @endif                 
                         </div>
+                        <h2 class="mt-6 text-md leading-10 tracking-right font-bold text-blue-600 text-center">Comments</h2>
+                        <div>
+                            
+                        </div>
+                        
                 </article>
             @endforeach
             
