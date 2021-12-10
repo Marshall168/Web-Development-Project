@@ -38,7 +38,8 @@
                 </div>
                     <!-- secondary -->
                 <div class="col-md-8 pt-2">
-                    <a href="users.profile" class="py-5 px-3 text-gray-700 hover:text-gray-900">Profile</a>
+                    
+                    <a href="" class="py-5 px-3 text-gray-700 hover:text-gray-900">Profile</a>
                     <a href="logout" type="submit" class="btn btn-primary py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300">
                         Sign Out
                     </a>
@@ -48,10 +49,13 @@
             </div>  
         </div>
     </nav>
-
-
 @section('content')
-    <div class="container">
+<main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl container">
+    <section>
+        <h3 class="font-bold text-2xl text-center">The Network</h3>
+        <p class="text-gray-600 pt-2 text-center"> Profile</p>
+
+        <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -70,7 +74,45 @@
             </div>
         </div>
     </div>
+
+    <section class="row new-post">
+        <div class="col-md-6 col-md-offset-3">
+            
+            <form action="{{ route('profile.save') }}" method="post" enctype="multipart/form-data">
+                <div class="form-group mb-6 pt-3 mx-auto">
+                    <label class="col-md-4 col-form-label text-md-right" for="name">Name</label>
+                    <input type="text" name="name" class="form-control bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300" value="{{ $users->name }}" id="name">
+                </div>
+                <div class="form-group mb-6 pt-3 mx-auto">
+                    <label for="image">Image (only .jpg)</label>
+                    <input type="file" name="image" class="form-control" id="image">
+                </div>
+                <button type="submit" class="btn py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300">Save</button>
+                <input type="hidden" value="{{ Session::token() }}" name="_token">
+            </form>
+            
+        </div>
+    </section>
+    @if (Storage::disk('local')->has($users->first_name . '-' . $users->id . '.jpg'))
+        <section class="row new-post">
+            <div class="col-md-6 col-md-offset-3">
+                <img src="{{ route('account.image', ['filename' => $users->name . '-' . $user->id . '.jpg']) }}" alt="" class="img-responsive">
+            </div>
+            
+        </section>
+    @endif
+    <div class="p-5">
+        <a href="dashboard" type="submit" class="btn btn-primary py-3 px-3 bg-blue-500 hover:bg-blue-600 space-y-5 rounded text-white transition duration-300">
+            Back to Dashboard
+        </a>
+    </div>
+    </section>
+
+    
 @endsection
+
+</main>
+
 </body>
 </html>
 
