@@ -5,6 +5,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CommentController;
 use Ape\Models\User;
 
 
@@ -55,9 +56,13 @@ Route::get('/dashboard', [PostController::class, 'getDashboard']);
 Route::get('/profile', [UserController::class, 'index']);
 Route::get('/profile/{id}', [UserController::class, 'show']);
 
+//posts
+
 Route::post('/createpost', [PostController::class, 'postCreatePost'])->name('post.create')->middleware(['auth']);
 
 Route::get('/delete-post/{post_id}', [PostController::class, 'destroy'])->name('post.delete')->middleware(['auth']);
+
+//users
 
 Route::get('/profile', [UserController::class, 'getProfile'])->name('profile');
 
@@ -65,3 +70,8 @@ Route::post('/updateprofile', [UserController::class, 'postSaveProfile'])->name(
 
 Route::get('/userimage/{filename}', [UserController::class, 'getUserImage'])->name('account.image');
 
+
+
+
+
+;
