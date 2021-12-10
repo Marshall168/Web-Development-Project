@@ -102,7 +102,7 @@
         </section>
     @endif
     <div class="p-5">
-        <a href="dashboard" type="submit" class="btn btn-primary py-3 px-3 bg-blue-500 hover:bg-blue-600 space-y-5 rounded text-white transition duration-300">
+        <a href="dashboard" type="submit" class="btn btn-primary py-3 px-3 bg-blue-500 hover:bg-blue-600 space-y-6 rounded text-white transition duration-300">
             Back to Dashboard
         </a>
     </div>
