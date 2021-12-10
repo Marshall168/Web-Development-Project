@@ -38,7 +38,7 @@
                 </div>
                     <!-- secondary -->
                 <div class="col-md-8 pt-2">
-                    <a href="profile" class="py-5 px-3 text-gray-700 hover:text-gray-900">Profile</a>
+                    <a href="{{ route('profile') }}" class="py-5 px-3 text-gray-700 hover:text-gray-900">Profile</a>
                     <a href="logout" type="submit" class="btn btn-primary py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300">
                         Sign Out
                     </a>
@@ -110,6 +110,7 @@
         </div>
 
     </section>
+   
 @endsection
 </body>
 </html>
