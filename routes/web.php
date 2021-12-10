@@ -59,3 +59,9 @@ Route::post('/createpost', [PostController::class, 'postCreatePost'])->name('pos
 
 Route::get('/delete-post/{post_id}', [PostController::class, 'destroy'])->name('post.delete')->middleware(['auth']);
 
+Route::get('/profile', [UserController::class, 'getProfile'])->name('profile');
+
+Route::post('/updateprofile', [UserController::class, 'postSaveProfile'])->name('profile.save');
+
+Route::get('/userimage/{filename}', [UserController::class, 'getUserImage'])->name('account.image');
+
