@@ -102,7 +102,11 @@
                         </div>
                         <h2 class="mt-6 text-md leading-10 tracking-right font-bold text-blue-600 text-center">Comments</h2>
                         <div>
-                            
+                            <form action="{{}}" method="post">
+                                <div>   
+                                    
+                                </div>
+                            </form>
                         </div>
                         
                 </article>
