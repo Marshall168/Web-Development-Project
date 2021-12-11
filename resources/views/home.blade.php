@@ -49,19 +49,67 @@
         </div>
     </nav>
     <!-- hero -->
-    <section class="hero mb-auto h-screen">
-        <div class="container flex flex-col-reverse lg:flex-row items-center gap-12 mt-14 lg:mt-28">
-            <!--content-->
-            <div class="flex flex-1 flex-col items-center lg:items-start">
-                <h2 class="text-3xl md:text-4 lg:text-5xl justify-center text-center text-gray-700 lg:text-left mb-6">
-                    Landing
-                </h2>
-        
-            
+
+        <!-- Header-->
+        <header class="container-md px-5">
+            <div class="">
+                <div class="bg-light text-center">
+                    <div class="m-4 m-lg-5">
+                        <h1 class="display-5 fw-bold text-blue-600 text-2xl">Welcome.</h1>
+                        <p class="fs-4 text-blue-600">The Network is a quick and easy way to stay connected with friends and family.</p>
+                    </div>
+                </div>
             </div>
-            
-         </div>
-    </section>
+        </header>
+        <!-- Page Content-->
+        <section class="pt-4">
+            <div class="container px-lg-5 mx-auto">
+                <div>
+
+                </div>
+                <!-- Page Features-->
+                <div class="row gx-lg-5">
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                        <div class="card bg-gray-100 border-0 h-100 rounded-2xl">
+                            <div class="card-body flex flex-col ml-7 text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-collection"></i></div>
+                                <h2 class="fs-4 fw-bold text-blue-600">Free to Use!</h2>
+                                <p class="mb-0">It's free, and always will be!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                <img src="/imgs/landing1.jpg" alt="Free Image" class="object-scall-down h40 w-96 shadow-xl rounded-2xl"> -->
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                        <div class="card bg-gray-100 border-0 h-100 rounded-2xl">
+                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-cloud-download"></i></div>
+                                <h2 class="fs-4 fw-bold text-blue-600">Friendly UI</h2>
+                                <p class="mb-0">Easy to understand and navigate, as it should be!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                        <div class="card bg-gray-100 border-0 h-100 rounded-2xl">
+                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-card-heading"></i></div>
+                                <h2 class="fs-4 fw-bold text-blue-600">Join Over 2,000+ Users in this Startup Project!</h2>
+                                <p class="mb-0">This will soon be a big platform, be one of the first and be rewarded for it!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-4 mb-5">
+                        <div class="card bg-gray-100 border-0 h-100 rounded-2xl">
+                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-bootstrap"></i></div>
+                                <h2 class="fs-4 fw-bold text-blue-600">Get Started Now!</h2>
+                                <p class="mb-0">Press the 'Sign Up' button at the top right of the page to Get Started!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     <!-- end hero -->
  
 </body>
