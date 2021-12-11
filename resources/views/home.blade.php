@@ -54,63 +54,91 @@
         <header class="container-md px-5">
             <div class="">
                 <div class="bg-light text-center">
-                    <div class="m-4 m-lg-5">
-                        <h1 class="display-5 fw-bold text-blue-600 text-2xl">Welcome.</h1>
-                        <p class="fs-4 text-blue-600">The Network is a quick and easy way to stay connected with friends and family.</p>
+                    <div class="m-4 m-lg-5 text-blue-600">
+                        <h1 class="display-5 fw-bold text-2xl">Welcome.</h1>
+                        <p class="fs-4">The Network is a quick and easy way to stay connected with friends and family.</p>
                     </div>
                 </div>
             </div>
         </header>
         <!-- Page Content-->
-        <section class="pt-4">
-            <div class="container px-lg-5 mx-auto">
-                <div>
+        <div>
+        
+            <section class="pt-4 max-w-7xl mx-auto">
+                <div class="container bg-blue-600 pb-10 px-5 py-5 rounded-2xl shadow-2xl space-y-5 mx-auto">
+                    <div>
+
+                    </div>
+                    <!-- Page Features-->
+                    <div class="row gx-lg-5 space-y-10 px-5">
+                        <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card bg-gray-100 border-0 h-100 rounded-2xl">
+                                <div class="card-body flex flex-col ml-7 text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-collection"></i></div>
+                                    <h2 class="fs-4 fw-bold text-blue-600 font-bold">Free to Use!</h2>
+                                    <p class="mb-0 text-gray-600">It's free, and always will be!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--
+                    <img src="/imgs/landing1.jpg" alt="Free Image" class="object-scall-down h40 w-96 shadow-xl rounded-2xl"> -->
+                        <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card bg-gray-100 border-0 h-100 rounded-2xl">
+                                <div class="card-body flex flex-col ml-7 text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-cloud-download"></i></div>
+                                    <h2 class="fs-4 fw-bold text-blue-600 font-bold">Friendly UI</h2>
+                                    <p class="mb-0 text-gray-600">Easy to understand and navigate, as it should be!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card bg-gray-100 border-0 h-100 rounded-2xl">
+                                <div class="card-body flex flex-col ml-7 text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-card-heading"></i></div>
+                                    <h2 class="fs-4 fw-bold text-blue-600 font-bold">Join Over 2,000+ Users in this Startup Project!</h2>
+                                    <p class="mb-0 text-gray-600">This will soon be a big platform, be one of the first and be rewarded for it!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xxl-4 mb-5">
+                            <div class="card bg-gray-100 border-0 h-100 rounded-2xl">
+                                <div class="card-body flex flex-col ml-7 text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-bootstrap"></i></div>
+                                    <h2 class="fs-4 fw-bold text-blue-600 font-bold">Get Started Now!</h2>
+                                    <p class="mb-0 text-gray-600">Press the 'Sign Up' button at the top right of the page to Get Started!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                
 
                 </div>
-                <!-- Page Features-->
-                <div class="row gx-lg-5">
-                    <div class="col-lg-6 col-xxl-4 mb-5">
-                        <div class="card bg-gray-100 border-0 h-100 rounded-2xl">
-                            <div class="card-body flex flex-col ml-7 text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-collection"></i></div>
-                                <h2 class="fs-4 fw-bold text-blue-600">Free to Use!</h2>
-                                <p class="mb-0">It's free, and always will be!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!--
-                <img src="/imgs/landing1.jpg" alt="Free Image" class="object-scall-down h40 w-96 shadow-xl rounded-2xl"> -->
-                    <div class="col-lg-6 col-xxl-4 mb-5">
-                        <div class="card bg-gray-100 border-0 h-100 rounded-2xl">
-                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-cloud-download"></i></div>
-                                <h2 class="fs-4 fw-bold text-blue-600">Friendly UI</h2>
-                                <p class="mb-0">Easy to understand and navigate, as it should be!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xxl-4 mb-5">
-                        <div class="card bg-gray-100 border-0 h-100 rounded-2xl">
-                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-card-heading"></i></div>
-                                <h2 class="fs-4 fw-bold text-blue-600">Join Over 2,000+ Users in this Startup Project!</h2>
-                                <p class="mb-0">This will soon be a big platform, be one of the first and be rewarded for it!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xxl-4 mb-5">
-                        <div class="card bg-gray-100 border-0 h-100 rounded-2xl">
-                            <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
-                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-bootstrap"></i></div>
-                                <h2 class="fs-4 fw-bold text-blue-600">Get Started Now!</h2>
-                                <p class="mb-0">Press the 'Sign Up' button at the top right of the page to Get Started!</p>
-                            </div>
-                        </div>
-                    </div>
+
+                <div class="space-x-7 text-2xl text-center pt-8 text-blue-600">
+                        <a href="https://www.facebook.com">
+                            <ion-icon class="" name="logo-facebook">
+                        </a>
+                        <a href="https://www.twitter.com">
+                            <ion-icon class="" name="logo-twitter">
+                        </a>
+                        <a href="https://www.linkedin.com">
+                            <ion-icon class="" name="logo-linkedin">
+                        </a>
                 </div>
-            </div>
-        </section>
+            
+            </section>
+
+        </div>
+        
     <!-- end hero -->
- 
+    <footer class="w-full bg-gray-100 text-blue-600 text-center bottom-0 fixed h-20 pt-8">
+        <h2 class="">
+            The Network, 2021
+        </h2>
+
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
