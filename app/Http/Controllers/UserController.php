@@ -25,7 +25,7 @@ class UserController extends Controller
 
     public function show($id)
     {
-        $animal = User::findOrFail($id);
+        $user = User::findOrFail($id);
         return view('profile', ['user' => $user]);
     }
     
