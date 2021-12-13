@@ -92,20 +92,21 @@
             </form>
             
         </div>
-    </section>
-    @if (Storage::disk('local')->has($users->first_name . '-' . $users->id . '.jpg'))
-        <section class="row new-post">
-            <div class="col-md-6 col-md-offset-3">
-                <img src="{{ route('account.image', ['filename' => $users->name . '-' . $user->id . '.jpg']) }}" alt="" class="img-responsive">
+
+        @if (Storage::disk('local')->has($user->name . $user->id . '.jpg'))
+            <section class="container w-full">
+                <div class="w-full container">
+                    <img src="{{ route('profile.image', ['filename' => $user->name . $user->id . '.jpg']) }}" alt="test" class="">
+                </div>
+                
+            </section>
+        @endif
+            <div class="p-5">
+                <a href="dashboard" type="submit" class="btn btn-primary py-3 px-3 bg-blue-500 hover:bg-blue-600 space-y-6 rounded text-white transition duration-300">
+                    Back to Dashboard
+                </a>
             </div>
-            
-        </section>
-    @endif
-    <div class="p-5">
-        <a href="dashboard" type="submit" class="btn btn-primary py-3 px-3 bg-blue-500 hover:bg-blue-600 space-y-6 rounded text-white transition duration-300">
-            Back to Dashboard
-        </a>
-    </div>
+
     </section>
 
     
