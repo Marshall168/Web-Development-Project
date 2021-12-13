@@ -6,7 +6,8 @@ use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CommentController;
-use Ape\Models\User;
+use App\Models\User;
+use App\Models\Post;
 
 
 Route::get('/', function () {
@@ -61,6 +62,9 @@ Route::get('/profile/{id}', [UserController::class, 'show']);
 Route::post('/createpost', [PostController::class, 'postCreatePost'])->name('post.create')->middleware(['auth']);
 
 Route::get('/delete-post/{post_id}', [PostController::class, 'destroy'])->name('post.delete')->middleware(['auth']);
+
+Route::put('/editpost/{post_id}', [PostController::class, 'update'])->name('post.update')->middleware(['auth']);
+
 
 //users
 
