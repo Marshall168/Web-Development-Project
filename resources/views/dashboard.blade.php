@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist.js"></script>
+
 @extends('layouts.app')
     <!-- Navbar -->
     <nav class="bg-gray-100">
@@ -78,6 +78,10 @@
                  <div class="form-group">
                     <textarea class="form-control min-w-full" name="body" id="new-post" rows="5" placeholder="Enter your post here..."></textarea>
                  </div>
+                 <div class="form-group mb-6 pt-3 mx-auto">
+                    <label for="image">Image (only .jpg)</label>
+                    <input type="file" name="image" class="form-control" id="image">
+                </div>
                  <button type="submit" class="btn btn-primary float-right py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300">Update Post</button>
                  <input type="hidden" value="{{ Session::token() }}" name="_token">
              </form>
@@ -87,36 +91,32 @@
         <div class="cold-md-6 col-md-offset-3 mb-5">
             <header><h3 class="text-2xl uppercase text-blue-600 mb-5">How are your friends doing?</h3></header>
             @foreach($posts as $post)
-                <article class="post py-5 rounded-2xl border-blue-600 border-l-2 space-y-2 mb-5 bg-gray-100">
+            
+                <article class="py-5 rounded-2xl border-blue-600 border-l-2 space-y-2 mb-5 bg-gray-100">
                     <p class="pl-5 "> {{ $post->body }} </p>
-                        <div class="italic text-gray-500 pl-5">
+                    <div class="italic text-gray-500 pl-5">
                             Posted by {{ $post->user->name}} on {{ $post->created_at }}
-                        </div>
-                        <div class="pl-5">
+                    </div>
+                    <div id="interaction" class="pl-5">
                             <a href="#">Like</a> -
-                            
-                            @if(Auth::user()== $post->user)
-                                <a href="#">Edit</a> -
+                             
+                            @if(Auth::user() == $post->user)
+                                <a href="{{ route('post.update', ['post_id' => $post->id]) }}">Edit</a> -
                                 <a href="{{ route('post.delete', ['post_id' => $post->id]) }}">Delete</a> 
                             @endif                 
-                        </div>
+                    </div>
                         <h2 class="mt-6 text-md leading-10 tracking-right font-bold text-blue-600 text-center">Comments</h2>
-                        <div>
-                            <form action="{{}}" method="post">
-                                <div>   
-                                    
-                                </div>
-                            </form>
-                        </div>
+                       
                         
                 </article>
             @endforeach
             
-           
-
         </div>
 
     </section>
+
+  
+
    
 @endsection
 </body>
