@@ -72,7 +72,7 @@ Route::get('/profile', [UserController::class, 'getProfile'])->name('profile');
 
 Route::post('/updateprofile', [UserController::class, 'postSaveProfile'])->name('profile.save');
 
-Route::get('/userimage/{filename}', [UserController::class, 'getUserImage'])->name('account.image');
+Route::get('/userimage/{filename}', [UserController::class, 'getUserImage'])->name('profile.image');
 
 
 
