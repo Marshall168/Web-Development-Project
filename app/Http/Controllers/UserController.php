@@ -49,7 +49,7 @@ class UserController extends Controller
         $user->name = $request['name'];
         $user->update();
         $file = $request->file('image');
-        $filename = $request['name'] . '-' . $user->id . '.jpg';
+        $filename = $request['name'] . $user->id . '.jpg';
         if ($file) {
             Storage::disk('local')->put($filename, File::get($file));
         }
