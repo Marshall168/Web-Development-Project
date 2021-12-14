@@ -77,7 +77,9 @@ Route::post('/updateprofile', [UserController::class, 'postSaveProfile'])->name(
 Route::get('/userimage/{filename}', [UserController::class, 'getUserImage'])->name('profile.image');
 
 
+//comments
 
+Route::get('/comments/{post_id}', [CommentController::class, 'page'])->name('comment.get');
 
 
 ;
