@@ -63,4 +63,11 @@ class UserController extends Controller
         $file = Storage::disk('local')->get($filename);
         return new Response($file, 200);
     }
+
+    public function userSettings()
+    {
+        return view('settings');
+    }
 }
+
+
