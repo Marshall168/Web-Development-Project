@@ -18,7 +18,7 @@ class PostController extends Controller
     {
 
 
-        $posts = Post::paginate(4);
+        $posts = Post::all();
         return view('posts.index', ['posts' => $posts]);
     }
 
@@ -121,6 +121,7 @@ class PostController extends Controller
         $post = new Post();
         $post->body = $request['body'];
         $message = 'There was an error';
+    
         if ($request->user()->post()->save($post)){
             $message = 'Post successful!';
 
