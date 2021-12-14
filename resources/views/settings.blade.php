@@ -15,14 +15,15 @@
 
 </head>
 <body>
-        <!-- Navbar -->
+       
+    <!-- Navbar -->
     <nav class="bg-gray-100">
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-between">
                 <div class="flex space-x-4">
                     <!-- logo -->
                     <div>
-                        <a href="dashboard" class="flex items-center py-5 px-2 text-gray-700">
+                        <a href="/dashboard" class="flex items-center py-5 px-2 text-gray-700">
                         <svg class="h-6 w-6 mr-2 text-gray-700 font-bold" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                         </svg>
@@ -32,16 +33,19 @@
                 <!-- primary -->
                     <div class= "flex items-center space-x-1">
                     
-                        <a href="contact" class="py-5 px-3 text-gray-700 hover:text-gray-900">Contact</a>
+                        <a href="/settings" class="py-5 px-3 text-gray-700 hover:text-gray-900">Settings</a>
+                        <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">Notifications</a>
 
                     </div>
                 <!-- end primary -->
 
                 </div>
                     <!-- secondary -->
-                <div class="flex items-center space-x-1">
-                    <a href="login" class="py-5 px-3 text-gray-700 hover:text-gray-900">Login</a>
-                    <a href="register" class="py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300">Sign Up</a>
+                <div class="col-md-8 pt-2">
+                    <a href="{{ route('profile') }}" class="py-5 px-3 text-gray-700 hover:text-gray-900">Profile</a>
+                    <a href="logout" type="submit" class="btn btn-primary py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300">
+                        Sign Out
+                    </a>
                 </div>
                     <!-- end secondary -->
 
@@ -82,7 +86,7 @@
                                 </div>
                             </div>
 
-                            <img src="/imgs/cogs.jpeg" alt="Settings Image" class="rounded-2xl shadow-2-xl mx-auto pt-10 ">
+                            <img src="/imgs/cogs.jpeg" alt="Settings Image" class="card rounded-3xl shadow-2-xl mx-auto pt-10 max-w-xl max-h-xl">
                         </div>
                         <!--
                     <img src="/imgs/landing1.jpg" alt="Free Image" class="object-scall-down h40 w-96 shadow-xl rounded-2xl"> -->
@@ -90,17 +94,6 @@
 
                 </div>
 
-                <div class="space-x-7 text-2xl text-center pt-8 text-blue-600">
-                        <a href="https://www.facebook.com">
-                            <ion-icon class="" name="logo-facebook">
-                        </a>
-                        <a href="https://www.twitter.com">
-                            <ion-icon class="" name="logo-twitter">
-                        </a>
-                        <a href="https://www.linkedin.com">
-                            <ion-icon class="" name="logo-linkedin">
-                        </a>
-                </div>
             
             </section>
 
@@ -111,6 +104,7 @@
         <h2 class="">
             The Network, 2021
         </h2>
+    
 
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
