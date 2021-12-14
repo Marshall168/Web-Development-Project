@@ -44,8 +44,5 @@ class User extends Authenticatable
         return $this->belongsTo('App\Models\Friendship');
     }
 
-    public function post()
-    {
-        return $this->hasMany('App\Models\Post');
-    }
+    
 }
