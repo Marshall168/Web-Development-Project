@@ -16,9 +16,13 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+
+
+        $posts = Post::paginate(4);
         return view('posts.index', ['posts' => $posts]);
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -105,7 +109,7 @@ class PostController extends Controller
 
     public function getDashboard()
     {
-        $posts = Post::orderBy('created_at','desc')->get();
+        $posts = Post::paginate(5);
         return view('dashboard', ['posts' => $posts]);
     }
 
@@ -124,6 +128,5 @@ class PostController extends Controller
         return redirect('dashboard')->with(['message' => $message]);
     }
 
-    
-
+   
 }
