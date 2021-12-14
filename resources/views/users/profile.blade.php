@@ -29,7 +29,7 @@
                 <!-- primary -->
                     <div class= "flex items-center space-x-1">
                     
-                        <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">Settings</a>
+                        <a href="/settings" class="py-5 px-3 text-gray-700 hover:text-gray-900">Settings</a>
                         <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">Notifications</a>
 
                     </div>
@@ -50,6 +50,26 @@
         </div>
     </nav>
 @section('content')
+
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+
+                    <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 <main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl container">
     <section>
         <h3 class="font-bold text-2xl text-center">The Network</h3>
@@ -90,10 +110,20 @@
                 <button type="submit" class="btn py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300">Save</button>
                 <input type="hidden" value="{{ Session::token() }}" name="_token">
             </form>
-            
+
+
+            <img src="{{URL ('storage/ScottJones-5.jpg') }}" alt="" class="w-full h-full">
+        
         </div>
 
     </section>
+
+    <section>
+    
+            
+    </section>
+
+   
 
     
 @endsection
