@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,7 +58,7 @@
 
 
         
-        <form action="{{ route('post.update', ['id' => $post->id]) }}" >
+        <form method="POST" action="{{ route('post.update', ['id' => $post->id]) }}" >
            
             <div class="form-group">
                 <textarea class="form-control min-w-full" name="body" id="edit-post" rows="5" placeholder="Enter your post here..."></textarea>
