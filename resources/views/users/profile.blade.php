@@ -112,7 +112,6 @@
             </form>
 
 
-            <img src="{{URL ('storage/ScottJones-5.jpg') }}" alt="" class="w-full h-full">
         
         </div>
 
