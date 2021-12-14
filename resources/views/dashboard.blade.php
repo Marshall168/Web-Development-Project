@@ -7,6 +7,8 @@
     <title>The Network - Dashboard</title>
 
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    
+    
 </head>
 
 <body>
@@ -110,6 +112,12 @@
                         
                 </article>
             @endforeach
+
+          
+            <div class="text-center align-baseline text-bold text-2xl text-blue-600">
+                {{$posts->links()}}
+            </div>
+            
             
         </div>
 
