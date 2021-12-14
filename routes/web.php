@@ -57,6 +57,8 @@ Route::get('/dashboard', [PostController::class, 'getDashboard']);
 Route::get('/profile', [UserController::class, 'index']);
 Route::get('/profile/{id}', [UserController::class, 'show']);
 
+Route::get('/settings', [UserController::class,'userSettings']);
+
 //posts
 
 Route::post('/createpost', [PostController::class, 'postCreatePost'])->name('post.create')->middleware(['auth']);
