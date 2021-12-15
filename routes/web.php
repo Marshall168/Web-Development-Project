@@ -65,7 +65,8 @@ Route::post('/createpost', [PostController::class, 'postCreatePost'])->name('pos
 
 Route::get('/delete-post/{post_id}', [PostController::class, 'destroy'])->name('post.delete')->middleware(['auth']);
 
-Route::put('/editpost/{post_id}', [PostController::class, 'update'])->name('post.update')->middleware(['auth']);
+Route::get('/updatepost/{id}', [PostController::class, 'edit'])->name('post.edit');
+Route::put('/editpost/{id}', [PostController::class, 'update'])->name('post.update');
 
 
 //users
