@@ -80,7 +80,11 @@ Route::get('/userimage/{filename}', [UserController::class, 'getUserImage'])->na
 
 //comments
 
-Route::get('/comments/{post_id}', [CommentController::class, 'page'])->name('comment.get')->middleware(['auth']);
+//Route::get('/comments/{id}', [CommentController::class, 'postCreateComment'])->name('comment.create')->middleware(['auth']);
 
+Route::get('/comments/{id}', [CommentController::class, 'postComments'])->name('view.comments')->middleware(['auth']);
+//Route::get('/comments', [CommentController::class, 'page']);
+
+// Route::post('/createcomment', [CommentController::class, 'postCreateComment'])->name('comment.create')->middleware(['auth']);
 
 ;
