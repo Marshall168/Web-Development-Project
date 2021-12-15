@@ -66,19 +66,9 @@ class PostController extends Controller
     public function edit(Request $request, $id)
     {
         $post = Post::findOrFail($id);
-        $this->validate($request,[
-            'body' => 'required|max:250'
-        ]);
+     
        
-        $post = new Post();
-        $post->body = $request['body'];
-
-        $message = 'There was an error';
-        if ($request->user()->post()->save($post)){
-            $message = 'Edit successful!';
-
-        }
-        return redirect('dashboard')->with(['message' => $message]);
+        return view('posts.editpost', ['post' => $post]);
     }
 
     /**
@@ -88,24 +78,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        $post = Post::findOrFail($id);
-        $this->validate($request,[
-            'body' => 'required|max:250'
-        ]);
-        
-        $post = new Post();
-        $post->body = $request['body'];
-
-        $message = 'There was an error';
-        if ($request->user()->post()->save($post)){
-            $message = 'Edit successful!';
-
-        }
-        return redirect('dashboard')->with(['message' => $message]);
-        
-    }
+   
 
     /**
      * Remove the specified resource from storage.
@@ -145,5 +118,16 @@ class PostController extends Controller
         return redirect('dashboard')->with(['message' => $message]);
     }
 
+
+    public function update(Request $request, $id)
+    {
+        $post = Post::findOrFail($id);
+        $body = $request->input('body');
+        $post->body = $body;
+        $post->save();
+
+        return redirect('dashboard');
+        
+    }
    
 }
