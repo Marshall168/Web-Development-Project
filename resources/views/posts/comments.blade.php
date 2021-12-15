@@ -7,9 +7,14 @@
     <title>The Network - Dashboard</title>
 
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    
 </head>
 
 <body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 
 @extends('layouts.app')
     <!-- Navbar -->
@@ -19,7 +24,7 @@
                 <div class="flex space-x-4">
                     <!-- logo -->
                     <div>
-                        <a href="" class="flex items-center py-5 px-2 text-gray-700">
+                        <a href="/dashboard" class="flex items-center py-5 px-2 text-gray-700">
                         <svg class="h-6 w-6 mr-2 text-gray-700 font-bold" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                         </svg>
@@ -71,51 +76,76 @@
             </div>
         </div>
     </div>
-    <section class="row new-post px-16">
-         <div class="col-md-6 col-md-offset-3">
-             <header><h3 class="text-2xl uppercase text-blue-600 ">Whats going on?</h3></header>
-             <form action="{{ route('post.create') }}" method="post">
-                 <div class="form-group">
-                    <textarea class="form-control min-w-full" name="body" id="new-post" rows="5" placeholder="Enter your post here..."></textarea>
-                 </div>
-                 <div class="form-group mb-6 pt-3 mx-auto">
-                    <label for="image">Image (only .jpg)</label>
-                    <input type="file" name="image" class="form-control" id="image">
-                </div>
-                 <button type="submit" class="btn btn-primary float-right py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300">Update Post</button>
-                 <input type="hidden" value="{{ Session::token() }}" name="_token">
-             </form>
-         </div>
-    </section>
-    <section class="row posts px-16 py-10 ">
-        <div class="cold-md-6 col-md-offset-3 mb-5">
-            <header><h3 class="text-2xl uppercase text-blue-600 mb-5">How are your friends doing?</h3></header>
-            @foreach($posts as $post)
-            
-                <article class="py-5 rounded-2xl border-blue-600 border-l-2 space-y-2 mb-5 bg-gray-100">
-                    <p class="pl-5 "> {{ $post->body }} </p>
-                    <div class="italic text-gray-500 pl-5">
-                            Posted by {{ $post->user->name}} on {{ $post->created_at }}
-                    </div>
-                    <div id="interaction" class="pl-5">
-                            <a href="#">Like</a> -
-                             
-                            @if(Auth::user() == $post->user)
-                                <a href="{{ route('post.update', ['post_id' => $post->id]) }}">Edit</a> -
-                                <a href="{{ route('post.delete', ['post_id' => $post->id]) }}">Delete</a> 
-                            @endif                 
-                    </div>
-                        <h2 class="mt-6 text-md leading-10 tracking-right font-bold text-blue-600 text-center">Comments</h2>
-                       
-                        
-                </article>
-            @endforeach
-            
-        </div>
-
-    </section>
-
+   
+    <section>
   
+        <article class="py-5 rounded-2xl border-blue-600 border-l-2 space-y-2 mb-5 bg-gray-100">
+            <p class="pl-5 "> {{ $posts->body }} </p>
+            <div class="italic text-gray-500 pl-5">
+                            Posted by {{ $posts->user->name}} on {{ $posts->created_at }}
+                    </div>
+            <br> 
+
+            <form action="" method="post">
+                <div class="px-5 form-group">
+                    <textarea class="form-control text-center w-full justify-items float items-center rounded-xl" name="body" id="new-comment" rows="3" placeholder="Enter your comment here..."></textarea>
+                    <button type="submit" class=" space-y-5 float-right py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300">Submit Comment</button>
+                    <input type="hidden" value="{{ Session::token() }}" name="_token">
+                </div>
+                <br> <br>
+
+                
+            </form>
+
+            <div id="comments">
+                <ul>
+                    <li v-for="comment in comments">
+                    @{{ comment.body }} </li>
+                </ul>
+                <h2>New Comment</h2>
+                Comment: <input type="text" id="body" v-model="newCommentBody">
+           
+                <button @click="createComment">Comment</button>
+
+               
+
+            </div>
+
+            <a href="/dashboard" class="text-blue-600 pl-5 uppercase">Back to Dashboard</a>
+
+        </article>
+
+        
+    </section>
+
+    
+                <script>
+                    var app = new Vue({
+                        el: "#comments",
+                        data: {
+                            comments: [],
+                            newCommentBody: '',
+                            
+                        },
+
+                        methods:{
+                            createComment:function(){
+                                axios.post("{{route('api.comments.store')}}",
+                                {
+                                    body:this.newCommentBody
+                                })
+                                .then(response=>{
+                                    this.comments.push(response.data);
+                                    this.newCommentBody='';
+                                }).catch(response=>{
+                                    console.log(response);
+                                })
+                                
+                            }
+                        }
+                    })
+                </script>
+
 
    
 @endsection
