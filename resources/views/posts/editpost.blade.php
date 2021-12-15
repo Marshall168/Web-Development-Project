@@ -16,7 +16,7 @@
                 <div class="flex space-x-4">
                     <!-- logo -->
                     <div>
-                        <a href="" class="flex items-center py-5 px-2 text-gray-700">
+                        <a href="/dashboard" class="flex items-center py-5 px-2 text-gray-700">
                         <svg class="h-6 w-6 mr-2 text-gray-700 font-bold" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                         </svg>
@@ -49,23 +49,16 @@
 
 <div>
    
-    <form action="/editpost/{{$post->id}}" enctype="multipart/form-data" method="POST">
+    <form action="/editpost/{{$post->id}}" action="{{ route('post.update', ['id' => $post->id]) }}" enctype="multipart/form-data" method="POST">
         @method('PATCH')
         @csrf
-        
-
-       
-
-
-        
-        <form method="POST" action="{{ route('post.update', ['id' => $post->id]) }}" >
            
-            <div class="form-group">
-                <textarea class="form-control min-w-full" name="body" id="edit-post" rows="5" placeholder="Enter your post here..."></textarea>
-            </div>
-            <button type="submit" class="float-right py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300">Update Post</button>
-            <input type="hidden" value="{{ Session::token() }}" name="_token">
-        </form>
+        <div class="form-group">
+            <textarea class="form-control min-w-full" name="body" id="edit-post" rows="5" placeholder="Enter your post here..."></textarea>
+        </div>
+        <button type="submit" class="float-right py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300">Update Post</button>
+        <input type="hidden" value="{{ Session::token() }}" name="_token">
+        
 
         
     </form>
