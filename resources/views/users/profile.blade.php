@@ -12,6 +12,8 @@
 <body>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist.js"></script>
 @extends('layouts.app')
+
+
     <!-- Navbar -->
     <nav class="bg-gray-100">
         <div class="max-w-7xl mx-auto">
