@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta id="token" name="token" content="{{ csrf_token() }}">
     <title>The Network - Dashboard</title>
 
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
@@ -56,6 +57,7 @@
 
 
 @section('content')
+
 @include('layouts.message')
     <div class="container">
         <div class="row justify-content-center">
@@ -86,7 +88,9 @@
                     </div>
             <br> 
 
+
             <form action="" method="post">
+            @csrf
                 <div class="px-5 form-group">
                     <textarea class="form-control text-center w-full justify-items float items-center rounded-xl" name="body" id="new-comment" rows="3" placeholder="Enter your comment here..."></textarea>
                     <button type="submit" class=" space-y-5 float-right py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300">Submit Comment</button>
@@ -98,14 +102,19 @@
             </form>
 
             <div id="comments">
+                
+                
                 <ul>
                     <li v-for="comment in comments">
                     @{{ comment.body }} </li>
                 </ul>
                 <h2>New Comment</h2>
                 Comment: <input type="text" id="body" v-model="newCommentBody">
-           
+                
                 <button @click="createComment">Comment</button>
+                <input type="hidden" name="_token" value="{{ Session::token() }}">
+
+               
 
                
 
@@ -124,13 +133,11 @@
                         el: "#comments",
                         data: {
                             comments: [],
-                            newCommentBody: '',
-                            
+                            newCommentBody: '', 
                         },
-
                         methods:{
                             createComment:function(){
-                                axios.post("{{route('api.comments.store')}}",
+                                axios.post("{{ route('api.comments.store') }}",
                                 {
                                     body:this.newCommentBody
                                 })
@@ -140,7 +147,6 @@
                                 }).catch(response=>{
                                     console.log(response);
                                 })
-                                
                             }
                         }
                     })
