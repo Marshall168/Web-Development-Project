@@ -130,4 +130,9 @@ class PostController extends Controller
         
     }
    
+    public function apiIndex()
+    {
+        $posts = Post::all();
+        return $posts;
+    }
 }
