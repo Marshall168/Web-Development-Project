@@ -52,12 +52,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
 
-Route::get('/dashboard', [PostController::class, 'getDashboard']);
+Route::get('/dashboard', [PostController::class, 'getDashboard'])->middleware(['auth']);
 
-Route::get('/profile', [UserController::class, 'index']);
-Route::get('/profile/{id}', [UserController::class, 'show']);
+Route::get('/profile', [UserController::class, 'index'])->middleware(['auth']);
+Route::get('/profile/{id}', [UserController::class, 'show'])->middleware(['auth']);
 
-Route::get('/settings', [UserController::class,'userSettings']);
+Route::get('/settings', [UserController::class,'userSettings'])->middleware(['auth']);
 
 //posts
 
@@ -65,22 +65,22 @@ Route::post('/createpost', [PostController::class, 'postCreatePost'])->name('pos
 
 Route::get('/delete-post/{post_id}', [PostController::class, 'destroy'])->name('post.delete')->middleware(['auth']);
 
-Route::get('/updatepost/{id}', [PostController::class, 'edit'])->name('post.edit');
-Route::put('/editpost/{id}', [PostController::class, 'update'])->name('post.update');
+Route::get('/updatepost/{id}', [PostController::class, 'edit'])->name('post.edit')->middleware(['auth']);
+Route::patch('/editpost/{id}', [PostController::class, 'update'])->name('post.update')->middleware(['auth']);
 
 
 //users
 
-Route::get('/profile', [UserController::class, 'getProfile'])->name('profile');
+Route::get('/profile', [UserController::class, 'getProfile'])->name('profile')->middleware(['auth']);
 
-Route::post('/updateprofile', [UserController::class, 'postSaveProfile'])->name('profile.save');
+Route::post('/updateprofile', [UserController::class, 'postSaveProfile'])->name('profile.save')->middleware(['auth']);
 
-Route::get('/userimage/{filename}', [UserController::class, 'getUserImage'])->name('profile.image');
+Route::get('/userimage/{filename}', [UserController::class, 'getUserImage'])->name('profile.image')->middleware(['auth']);
 
 
 //comments
 
-Route::get('/comments/{post_id}', [CommentController::class, 'page'])->name('comment.get');
+Route::get('/comments/{post_id}', [CommentController::class, 'page'])->name('comment.get')->middleware(['auth']);
 
 
 ;
