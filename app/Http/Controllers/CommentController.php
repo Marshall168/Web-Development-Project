@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\CommentsRequest;
 use App\Models\Comment;
+use App\Models\User;
 use App\Models\Post;
 
 class CommentController extends Controller
@@ -16,7 +17,8 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        $comments = Comment::all();
+        return view('dashboard');
     }
 
     /**
@@ -54,7 +56,7 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        //
+    
     }
 
     /**
@@ -90,14 +92,44 @@ class CommentController extends Controller
     {
         //
     }
-    public function page()
-    {
-        return view('posts.comments');
-    }
 
     public function apiIndex()
     {
         $comments = Comment::all();
         return $comments;
+    }
+
+    public function apiStore(Request $request)
+    {
+        $e = new Comment();
+        $e->body = $request['body'];
+        $e-save();
+        return $e;
+    }
+    
+    public function postCreateComment(Request $request, $id)
+    {
+        $this->validate($request,[
+            'body' => 'required|max:250'
+        ]);
+        $comment = new Comment();
+        $comment->body = $request['body'];
+
+
+
+
+    }
+
+    public function postComments(Request $request, $id)
+    {
+        $posts = Post::findOrFail($id);
+        
+        $comments = Comment::all();
+        return view('posts.comments', ['posts' => $posts]);
+    }
+
+    public function page()
+    {
+        return view('posts.comments');
     }
 }
