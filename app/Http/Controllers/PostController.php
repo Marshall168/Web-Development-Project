@@ -63,10 +63,22 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit(Request $request, $id)
     {
-        
-       //
+        $post = Post::findOrFail($id);
+        $this->validate($request,[
+            'body' => 'required|max:250'
+        ]);
+       
+        $post = new Post();
+        $post->body = $request['body'];
+
+        $message = 'There was an error';
+        if ($request->user()->post()->save($post)){
+            $message = 'Edit successful!';
+
+        }
+        return redirect('dashboard')->with(['message' => $message]);
     }
 
     /**
@@ -78,16 +90,20 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $post = Post::where('id', $post_id);
-        request()->validate([
-            'body' => 'required'
+        $post = Post::findOrFail($id);
+        $this->validate($request,[
+            'body' => 'required|max:250'
         ]);
-       
-
-        $input = $request->all();
-        $post->fill($input)->save();
         
-        return redirect('dashboard');
+        $post = new Post();
+        $post->body = $request['body'];
+
+        $message = 'There was an error';
+        if ($request->user()->post()->save($post)){
+            $message = 'Edit successful!';
+
+        }
+        return redirect('dashboard')->with(['message' => $message]);
         
     }
 
@@ -120,8 +136,8 @@ class PostController extends Controller
         ]);
         $post = new Post();
         $post->body = $request['body'];
+
         $message = 'There was an error';
-    
         if ($request->user()->post()->save($post)){
             $message = 'Post successful!';
 
