@@ -7,6 +7,7 @@ use App\Http\Requests\CommentsRequest;
 use App\Models\Comment;
 use App\Models\User;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
@@ -37,16 +38,26 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Post $post)
-    {
-        $data = $request->validated();
-        $comment = new Comment();
-        $comment->post_id = $post->id;
+    /**
+     * 
+     *  public function store(Post $post)
+       * {
+        *$data = $request->validated();
+        *$comment = new Comment();
+        *$comment->post_id = $post->id;
    
-        $comment->save();
+    *    $comment->save();
 
-        return $comment;
-    }
+     *   return $comment;
+      *   }
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     */
+   
 
     /**
      * Display the specified resource.
@@ -100,14 +111,22 @@ class CommentController extends Controller
         return $comment;
     }
 
-    public function apiStore(Request $request, $id)
+    public function apiStore(Request $request)
     {
-     
-        $e = new Comment();
-        $e->body = $request['body'];
-        $e-save();
-        return $e;
+        $c = new Comment;
+        $c->user_id = $request['user_id'];
+        $c->post_id = $request['post_id'];
+        $c->body = $request['body'];
+        
+       
+        $c->body = $request['body'];
+        $c->save();
+        
+        return $c;
+        
     }
+
+
     
     public function postCreateComment(Request $request, $id)
     {
@@ -133,5 +152,10 @@ class CommentController extends Controller
     public function page()
     {
         return view('posts.comments');
+    }
+
+    public function save()
+    {
+        //
     }
 }
