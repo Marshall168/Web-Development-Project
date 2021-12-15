@@ -79,48 +79,35 @@
         </div>
     </div>
    
-    <section>
+    <section class="">
   
-        <article class="py-5 rounded-2xl border-blue-600 border-l-2 space-y-2 mb-5 bg-gray-100">
-            <p class="pl-5 "> {{ $posts->body }} </p>
-            <div class="italic text-gray-500 pl-5">
+        <article class="py-5 rounded-2xl border-blue-600 border-2 shadow-xl space-y-2 mb-5 bg-gray-100 ">
+            <p class="text-center text-4xl "> {{ $posts->body }} </p>
+            <div class="italic text-gray-500 text-center border-b-2 border-blue-600 pb-5 rounded-xl">
                             Posted by {{ $posts->user->name}} on {{ $posts->created_at }}
                     </div>
             <br> 
 
 
-            <form action="" method="post">
-            @csrf
-                <div class="px-5 form-group">
-                    <textarea class="form-control text-center w-full justify-items float items-center rounded-xl" name="body" id="new-comment" rows="3" placeholder="Enter your comment here..."></textarea>
-                    <button type="submit" class=" space-y-5 float-right py-3 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300">Submit Comment</button>
-                    <input type="hidden" value="{{ Session::token() }}" name="_token">
-                </div>
-                <br> <br>
-
-                
-            </form>
-
-            <div id="comments">
+            <div id="comments" class="">
                 
                 
                 <ul>
                     <li v-for="comment in comments">
                     @{{ comment.body }} </li>
                 </ul>
-                <h2>New Comment</h2>
-                Comment: <input type="text" id="body" v-model="newCommentBody">
+                <br> <br>
+                <h2 class="text-blue-600 pl-5">Comment Below</h2>
+                <input type="text" id="body" v-model="newCommentBody" class="rounded-xl ml-5 w-4/5" placeholder="Enter Comment here...">
                 
-                <button @click="createComment">Comment</button>
+                <button class="py-2 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300 ml-5" @click="createComment">Comment</button>
                 <input type="hidden" name="_token" value="{{ Session::token() }}">
 
-               
-
-               
 
             </div>
 
-            <a href="/dashboard" class="text-blue-600 pl-5 uppercase">Back to Dashboard</a>
+            <br> <br>
+            <a href="/dashboard" class="text-white mt-5 pl-5 uppercase py-2 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300 ml-5">Back to Dashboard</a>
 
         </article>
 
