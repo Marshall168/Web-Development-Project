@@ -103,7 +103,7 @@
                             <a href="#">Like</a> -
                              
                             @if(Auth::user() == $post->user)
-                                <a href="{{ route('post.update', ['post_id' => $post->id]) }}">Edit</a> -
+                                <a href="{{ route('post.edit', ['id' => $post->id]) }}">Edit</a> -
                                 <a href="{{ route('post.delete', ['post_id' => $post->id]) }}">Delete</a> 
                             @endif                 
                     </div>
