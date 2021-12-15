@@ -99,15 +99,15 @@
                     <div class="italic text-gray-500 pl-5">
                             Posted by {{ $post->user->name}} on {{ $post->created_at }}
                     </div>
-                    <div id="interaction" class="pl-5">
-                            <a href="#">Like</a> -
-                             
+                    <div id="interaction" class="pl-5">   
                             @if(Auth::user() == $post->user)
                                 <a href="{{ route('post.edit', ['id' => $post->id]) }}">Edit</a> -
                                 <a href="{{ route('post.delete', ['post_id' => $post->id]) }}">Delete</a> 
-                            @endif                 
+                            @endif 
+                            
+                            <a href="{{ route('view.comments', ['id' => $post->id]) }}" class="text-blue-600 text-bold">View Comments</a>
                     </div>
-                        <h2 class="mt-6 text-md leading-10 tracking-right font-bold text-blue-600 text-center">Comments</h2>
+        
                        
                         
                 </article>
