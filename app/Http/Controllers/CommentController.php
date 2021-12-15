@@ -93,14 +93,16 @@ class CommentController extends Controller
         //
     }
 
-    public function apiIndex()
+    public function apiIndex($id)
     {
-        $comments = Comment::all();
-        return $comments;
+        
+        $comment= Comment::all();
+        return $comment;
     }
 
-    public function apiStore(Request $request)
+    public function apiStore(Request $request, $id)
     {
+     
         $e = new Comment();
         $e->body = $request['body'];
         $e-save();
