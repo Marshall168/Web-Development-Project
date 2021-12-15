@@ -89,16 +89,20 @@
             <br> 
 
 
-            <div id="comments" class="">
+            <div id="comments">
                 
                 
-                <ul>
-                    <li v-for="comment in comments">
-                    @{{ comment.body }} </li>
+                <ul class="">
+                    <li  class=" text-2xl text-gray-600 text-center" v-for="comment in comments"> 
+                    @{{ comment.body }}
+                
+                </li>
                 </ul>
                 <br> <br>
                 <h2 class="text-blue-600 pl-5">Comment Below</h2>
                 <input type="text" id="body" v-model="newCommentBody" class="rounded-xl ml-5 w-4/5" placeholder="Enter Comment here...">
+                <input type="hidden" id="post_id" value="{{$posts->id}}" v-model="postId">
+                <input type="hidden" id="user_id" value="{{Auth::id()}}" v-model="userId">
                 
                 <button class="py-2 px-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition duration-300 ml-5" @click="createComment">Comment</button>
                 <input type="hidden" name="_token" value="{{ Session::token() }}">
@@ -121,16 +125,22 @@
                         data: {
                             comments: [],
                             newCommentBody: '', 
+                            postId: {{$posts->id}},
+                            userId: {{Auth::id()}},
                         },
                         methods:{
                             createComment:function(){
                                 axios.post("{{ route('api.comments.store') }}",
                                 {
-                                    body:this.newCommentBody
+                                    body: this.newCommentBody, 
+                                    post_id: this.postId,
+                                    user_id: this.userId,
                                 })
                                 .then(response=>{
                                     this.comments.push(response.data);
                                     this.newCommentBody='';
+                                    this.postId = {{$posts->id}};
+                                    this.userId = {{Auth::id()}};
                                 }).catch(response=>{
                                     console.log(response);
                                 })
